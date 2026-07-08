@@ -9,3 +9,6 @@ __pycache__/
 # Database backup
 db.sqlite3
 data.json
+
+# Static collected
+staticfiles/

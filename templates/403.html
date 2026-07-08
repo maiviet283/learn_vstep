@@ -1,0 +1,11 @@
+{% extends "learning/base.html" %}
+{% block title %}403 – Không có quyền truy cập{% endblock %}
+
+{% block content %}
+<div class="text-center py-5">
+  <div style="font-size:5rem">🚫</div>
+  <h1 class="fw-bold mt-3" style="color:var(--brand-dark)">403</h1>
+  <p class="fs-5 text-muted mb-4">Bạn không có quyền truy cập nội dung này.</p>
+  <a href="{% url 'home' %}" class="btn btn-brand btn-lg"><i class="bi bi-house me-1"></i>Về trang chủ</a>
+</div>
+{% endblock %}
