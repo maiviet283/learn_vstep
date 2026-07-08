@@ -1,11 +1,25 @@
-{% extends "learning/base.html" %}
-{% block title %}500 – Lỗi hệ thống{% endblock %}
-
-{% block content %}
-<div class="text-center py-5">
-  <div style="font-size:5rem">⚙️</div>
-  <h1 class="fw-bold mt-3" style="color:var(--brand-dark)">500</h1>
-  <p class="fs-5 text-muted mb-4">Đã xảy ra lỗi từ phía máy chủ. Vui lòng thử lại sau ít phút.</p>
-  <a href="{% url 'home' %}" class="btn btn-brand btn-lg"><i class="bi bi-house me-1"></i>Về trang chủ</a>
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>500 – Lỗi hệ thống</title>
+<style>
+body { font-family: system-ui, sans-serif; background: #f6f8fc; color: #1e293b; display: flex; align-items: center; justify-content: center; min-height: 100vh; margin: 0; }
+.box { text-align: center; padding: 2rem; }
+.icon { font-size: 5rem; }
+h1 { color: #0f3e9e; font-weight: 800; margin: .5rem 0; }
+p { color: #64748b; font-size: 1.1rem; }
+a { display: inline-block; margin-top: 1rem; background: #1a56db; color: #fff; padding: .6rem 1.5rem; border-radius: .5rem; text-decoration: none; font-weight: 600; }
+a:hover { background: #0f3e9e; }
+</style>
+</head>
+<body>
+<div class="box">
+  <div class="icon">⚙️</div>
+  <h1>500</h1>
+  <p>Đã xảy ra lỗi từ phía máy chủ. Vui lòng thử lại sau ít phút.</p>
+  <a href="/">Về trang chủ</a>
 </div>
-{% endblock %}
+</body>
+</html>
