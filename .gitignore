@@ -6,9 +6,8 @@ venv/
 __pycache__/
 *.pyc
 
-# Database backup
+# Database
 db.sqlite3
-data.json
 
 # Static collected
 staticfiles/

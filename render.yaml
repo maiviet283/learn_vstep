@@ -12,15 +12,7 @@ services:
         value: "False"
       - key: PYTHON_VERSION
         value: "3.12.9"
-      - key: DB_NAME
-        sync: false
-      - key: DB_USER
-        sync: false
-      - key: DB_PASSWORD
-        sync: false
-      - key: DB_HOST
-        sync: false
-      - key: DB_PORT
-        value: "5432"
-      - key: RENDER
-        value: "true"
+      - key: ALLOWED_HOSTS
+        value: "learn-vstep.onrender.com,vstep.vietdon.vn"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://learn-vstep.onrender.com,https://vstep.vietdon.vn"
