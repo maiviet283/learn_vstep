@@ -1,0 +1,27 @@
+{% extends 'learning/base.html' %}
+{% block title %}Luyện nói VSTEP – VSTEP Master{% endblock %}
+{% block content %}
+<h1 class="h3 fw-bold mb-1">🎤 Kỹ năng Nói (VSTEP Speaking)</h1>
+<p class="text-secondary mb-4">Bài thi Nói VSTEP gồm 3 phần, tổng ~12 phút: <strong>Part 1 – Giao tiếp xã hội</strong> (3'), <strong>Part 2 – Thảo luận giải pháp</strong> (4'), <strong>Part 3 – Phát triển chủ đề</strong> (5'). Bấm 🔊 ở bài mẫu để nghe và luyện nói theo (shadowing).</p>
+{% for l in lessons %}
+<div class="card p-4 mb-3">
+  <span class="badge text-bg-primary mb-1">Part {{ l.part }}</span>
+  <h2 class="h5 fw-bold mb-0">{{ l.title }}</h2>
+  <div class="text-success small fw-medium">{{ l.title_vi }}</div>
+  <hr>
+  <div class="lesson-content">{{ l.content|safe }}</div>
+</div>
+{% endfor %}
+{% endblock %}
+{% block scripts %}
+<script>
+document.querySelectorAll('.speak-sample').forEach(btn => btn.addEventListener('click', () => {
+  const text = btn.closest('.ex, .note, div').querySelector('.sample-text')?.textContent || btn.dataset.text || '';
+  if (!text) return;
+  speechSynthesis.cancel();
+  const u = new SpeechSynthesisUtterance(text);
+  u.lang = 'en-US'; u.rate = 0.92;
+  speechSynthesis.speak(u);
+}));
+</script>
+{% endblock %}

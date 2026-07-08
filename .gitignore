@@ -1,0 +1,11 @@
+# Secrets - KHÔNG BAO GIỜ commit file này
+.env
+
+# Python
+venv/
+__pycache__/
+*.pyc
+
+# Database backup
+db.sqlite3
+data.json
