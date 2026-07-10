@@ -1,7 +1,7 @@
 {% extends 'learning/base.html' %}
 {% block title %}Flashcard: {{ topic.name }} – VSTEP Master{% endblock %}
 {% block content %}
-<nav class="small mb-2"><a href="{% url 'vocab_topics' %}">Từ vựng</a> › <a href="{% url 'vocab_detail' topic.pk %}">{{ topic.name }}</a> › Flashcard</nav>
+<nav class="breadcrumb-nav small mb-2"><a href="{% url 'vocab_topics' %}">Từ vựng</a> › <a href="{% url 'vocab_detail' topic.pk %}">{{ topic.name }}</a> › Flashcard</nav>
 <div class="row justify-content-center"><div class="col-md-7 col-lg-6">
   <h1 class="h4 fw-bold text-center mb-1">{{ topic.icon }} Flashcard – {{ topic.name_vi }}</h1>
   <p class="text-center text-secondary small">Bấm vào thẻ để lật xem nghĩa · <span id="counter"></span></p>
@@ -14,7 +14,7 @@
         <div class="small mt-3 opacity-50">(bấm để lật)</div>
       </div>
       <div class="flashcard-face flashcard-back">
-        <div class="fs-3 fw-bold text-success" id="b-meaning"></div>
+        <div class="fs-3 fw-bold" id="b-meaning" style="color:var(--primary)"></div>
         <div class="small text-secondary" id="b-pos"></div>
         <hr class="w-100">
         <div class="small" id="b-ex-en"></div>
@@ -25,11 +25,11 @@
 
   <div class="d-flex justify-content-center gap-2 mb-4">
     <button class="btn btn-outline-secondary" id="prev">← Trước</button>
-    <button class="btn btn-outline-primary" id="speak">🔊 Nghe</button>
+    <button class="btn btn-outline-secondary" id="speak">🔊 Nghe</button>
     <button class="btn btn-brand" id="next">Tiếp →</button>
   </div>
   <div class="text-center">
-    <a href="{% url 'vocab_quiz' topic.pk %}" class="btn btn-warning fw-semibold">✍️ Kiểm tra trắc nghiệm chủ đề này</a>
+    <a href="{% url 'vocab_quiz' topic.pk %}" class="btn btn-outline-secondary fw-semibold">Kiểm tra trắc nghiệm chủ đề này</a>
   </div>
 </div></div>
 

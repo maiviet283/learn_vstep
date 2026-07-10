@@ -20,9 +20,6 @@ def robots_txt(request):
         'User-agent: *',
         'Allow: /',
         'Disallow: /admin/',
-        'Disallow: /login/',
-        'Disallow: /register/',
-        'Disallow: /progress/',
         '',
         'Sitemap: https://vstep.vietdon.vn/sitemap.xml',
     ]

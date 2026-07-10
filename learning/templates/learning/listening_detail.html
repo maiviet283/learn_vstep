@@ -1,19 +1,19 @@
 {% extends 'learning/base.html' %}
 {% block title %}{{ track.title }} – Nghe hiểu VSTEP{% endblock %}
 {% block content %}
-<nav class="small mb-2"><a href="{% url 'listening_list' %}">Nghe hiểu</a> › {{ track.title }}</nav>
+<nav class="breadcrumb-nav small mb-2"><a href="{% url 'listening_list' %}">Nghe hiểu</a> › {{ track.title }}</nav>
 <div class="card p-4 mb-3">
   <div class="d-flex justify-content-between align-items-center flex-wrap gap-2">
-    <h1 class="h5 fw-bold mb-0">🎧 {{ track.title }} <span class="badge badge-level ms-1">{{ track.level }}</span></h1>
+    <h1 class="h5 fw-bold mb-0">{{ track.title }} <span class="badge badge-level ms-1">{{ track.level }}</span></h1>
     <div class="d-flex gap-2">
-      <button type="button" class="btn btn-brand" id="play"><i class="bi bi-play-fill"></i> Nghe</button>
-      <button type="button" class="btn btn-outline-secondary" id="stop"><i class="bi bi-stop-fill"></i> Dừng</button>
+      <button type="button" class="btn btn-brand btn-sm" id="play"><i class="bi bi-play-fill"></i> Nghe</button>
+      <button type="button" class="btn btn-outline-secondary btn-sm" id="stop"><i class="bi bi-stop-fill"></i> Dừng</button>
     </div>
   </div>
-  <div class="small text-secondary mt-2">💡 Mẹo: trong phòng thi bạn chỉ được nghe tối đa 1 lần cho một số phần — hãy tập nghe 1 lần rồi mới trả lời.</div>
+  <div class="small text-secondary mt-2">Mẹo: trong phòng thi bạn chỉ được nghe tối đa 1 lần cho một số phần — hãy tập nghe 1 lần rồi mới trả lời.</div>
   {% if results %}
   <details class="mt-3" open>
-    <summary class="fw-semibold text-primary" style="cursor:pointer">📄 Transcript &amp; bản dịch</summary>
+    <summary class="fw-semibold" style="color:var(--primary);cursor:pointer">Transcript &amp; bản dịch</summary>
     <div class="row mt-2 g-3">
       <div class="col-md-6 small">{{ track.transcript|linebreaks }}</div>
       <div class="col-md-6 small text-secondary">{{ track.translation_vi|linebreaks }}</div>
@@ -33,7 +33,7 @@
   </div>
   <div class="small mb-1">Bạn chọn: <strong>{% if r.chosen %}{{ r.chosen }}. {{ r.chosen_text }}{% else %}(chưa chọn){% endif %}</strong></div>
   {% if not r.ok %}<div class="small mb-2">Đáp án đúng: <strong class="text-success">{{ r.q.correct }}. {{ r.q.correct_text }}</strong></div>{% endif %}
-  <div class="explain-box"><strong>💡 Giải thích:</strong> {{ r.q.explanation }}</div>
+  <div class="explain-box"><strong>Giải thích:</strong> {{ r.q.explanation }}</div>
 </div>
 {% endfor %}
 <a href="{% url 'listening_detail' track.pk %}" class="btn btn-brand w-100 mb-4">Làm lại</a>

@@ -1,7 +1,7 @@
 {% extends 'learning/base.html' %}
 {% block title %}{{ passage.title }} – Đọc hiểu VSTEP{% endblock %}
 {% block content %}
-<nav class="small mb-2"><a href="{% url 'reading_list' %}">Đọc hiểu</a> › {{ passage.title }}</nav>
+<nav class="breadcrumb-nav small mb-2"><a href="{% url 'reading_list' %}">Đọc hiểu</a> › {{ passage.title }}</nav>
 <div class="row g-3">
   <div class="col-lg-6">
     <div class="card p-4 sticky-lg-top" style="top: 80px; max-height: calc(100vh - 100px); overflow-y: auto;">
@@ -12,7 +12,7 @@
       <div class="lesson-content">{{ passage.content|safe }}</div>
       {% if passage.translation_vi %}
       <details class="mt-3">
-        <summary class="fw-semibold text-primary" style="cursor:pointer">📄 Xem bản dịch tiếng Việt</summary>
+        <summary class="fw-semibold" style="color:var(--primary);cursor:pointer">Xem bản dịch tiếng Việt</summary>
         <div class="mt-2 small text-secondary">{{ passage.translation_vi|safe }}</div>
       </details>
       {% endif %}
@@ -30,7 +30,7 @@
       </div>
       <div class="small mb-1">Bạn chọn: <strong>{% if r.chosen %}{{ r.chosen }}. {{ r.chosen_text }}{% else %}(chưa chọn){% endif %}</strong></div>
       {% if not r.ok %}<div class="small mb-2">Đáp án đúng: <strong class="text-success">{{ r.q.correct }}. {{ r.q.correct_text }}</strong></div>{% endif %}
-      <div class="explain-box"><strong>💡 Giải thích:</strong> {{ r.q.explanation }}</div>
+      <div class="explain-box"><strong>Giải thích:</strong> {{ r.q.explanation }}</div>
     </div>
     {% endfor %}
     <a href="{% url 'reading_detail' passage.pk %}" class="btn btn-brand w-100 mb-4">Làm lại</a>

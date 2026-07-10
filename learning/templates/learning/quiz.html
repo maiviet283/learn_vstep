@@ -2,7 +2,7 @@
 {% block title %}{{ title }} – VSTEP Master{% endblock %}
 {% block content %}
 <h1 class="h4 fw-bold mb-1">{{ title }}</h1>
-{% if subtitle %}<p class="text-success fw-medium">{{ subtitle }}</p>{% endif %}
+{% if subtitle %}<p class="fw-medium" style="color:var(--primary)">{{ subtitle }}</p>{% endif %}
 <p class="text-secondary small mb-4">Chọn đáp án đúng cho mỗi câu rồi bấm <strong>Nộp bài</strong>. Hệ thống sẽ chấm điểm và giải thích từng câu.</p>
 <form method="post">{% csrf_token %}
   {% for q in questions %}

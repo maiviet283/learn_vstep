@@ -15,7 +15,7 @@
   <div class="small mb-1">Bạn chọn: <strong>{{ r.chosen }}</strong></div>
   {% if not r.ok %}<div class="small mb-2">Đáp án đúng: <strong class="text-success">{{ r.word.meaning_vi }}</strong></div>{% endif %}
   <div class="explain-box">
-    <strong>💡 Ghi nhớ:</strong> <strong>{{ r.word.word }}</strong> {{ r.word.pos }} {{ r.word.ipa }} = <strong>{{ r.word.meaning_vi }}</strong>.
+    <strong>Ghi nhớ:</strong> <strong>{{ r.word.word }}</strong> {{ r.word.pos }} {{ r.word.ipa }} = <strong>{{ r.word.meaning_vi }}</strong>.
     {% if r.word.example_en %}<br>Ví dụ: <em>{{ r.word.example_en }}</em> — {{ r.word.example_vi }}{% endif %}
   </div>
 </div>
