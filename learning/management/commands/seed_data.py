@@ -11,9 +11,15 @@ from learning.data.grammar_extra1 import EXTRA_QUESTIONS_1
 from learning.data.grammar_extra2 import EXTRA_QUESTIONS_2
 from learning.data.listening import TRACKS
 from learning.data.listening_2 import TRACKS_2
+from learning.data.listening_3 import TRACKS_3
+from learning.data.listening_4 import TRACKS_4
 from learning.data.reading import PASSAGES
 from learning.data.reading_2 import PASSAGES_2
+from learning.data.reading_3 import PASSAGES_3
+from learning.data.reading_4 import PASSAGES_4
 from learning.data.skills import SPEAKING_LESSONS, WRITING_LESSONS
+from learning.data.skills_2 import WRITING_PRACTICE
+from learning.data.skills_3 import SPEAKING_PRACTICE
 from learning.data.vocab_1 import TOPICS_1
 from learning.data.vocab_2 import TOPICS_2
 from learning.data.vocab_3 import TOPICS_3
@@ -69,7 +75,7 @@ class Command(BaseCommand):
             f'  {VocabTopic.objects.count()} chu de, {VocabWord.objects.count()} tu vung'))
 
         # --- Doc hieu ---
-        for p in PASSAGES + PASSAGES_2:
+        for p in PASSAGES + PASSAGES_2 + PASSAGES_3 + PASSAGES_4:
             passage = ReadingPassage.objects.create(title=p['title'], level=p['level'],
                                                     content=p['content'],
                                                     translation_vi=p['translation_vi'],
@@ -82,7 +88,7 @@ class Command(BaseCommand):
             f'  {ReadingPassage.objects.count()} bai doc, {Question.objects.filter(skill="reading").count()} cau hoi'))
 
         # --- Nghe hieu ---
-        for t in TRACKS + TRACKS_2:
+        for t in TRACKS + TRACKS_2 + TRACKS_3 + TRACKS_4:
             track = ListeningTrack.objects.create(title=t['title'], level=t['level'],
                                                   transcript=t['transcript'],
                                                   translation_vi=t['translation_vi'],
@@ -95,9 +101,9 @@ class Command(BaseCommand):
             f'  {ListeningTrack.objects.count()} bai nghe, {Question.objects.filter(skill="listening").count()} cau hoi'))
 
         # --- Viet & Noi ---
-        for w in WRITING_LESSONS:
+        for w in WRITING_LESSONS + WRITING_PRACTICE:
             WritingLesson.objects.create(**w)
-        for s in SPEAKING_LESSONS:
+        for s in SPEAKING_LESSONS + SPEAKING_PRACTICE:
             SpeakingLesson.objects.create(**s)
         self.stdout.write(self.style.SUCCESS(
             f'  {WritingLesson.objects.count()} bai viet, {SpeakingLesson.objects.count()} bai noi'))

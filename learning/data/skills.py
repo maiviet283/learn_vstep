@@ -43,7 +43,7 @@ Best wishes,<br>Minh
 },
 {
  'title': 'Task 2: Writing an Essay', 'title_vi': 'Viết bài luận (250 từ, 40 phút)',
- 'task_no': 2, 'order': 2,
+ 'task_no': 2, 'order': 10,
  'content': """
 <h3>1. Đề bài trông như thế nào?</h3>
 <div class="ex">Some people believe that students should wear uniforms at school. Others think students should be free to choose their clothes. <b>What is your opinion?</b> Write an essay of <b>at least 250 words</b>.<span class="vi">→ Dạng phổ biến nhất: nêu quan điểm (opinion essay). Ngoài ra còn dạng ưu/nhược điểm (advantages – disadvantages) và nguyên nhân – giải pháp (causes – solutions).</span></div>
@@ -111,7 +111,7 @@ Well, I definitely prefer eating at home. The main reason is that home-cooked me
 """,
 },
 {
- 'part': 2, 'order': 2,
+ 'part': 2, 'order': 10,
  'title': 'Part 2: Solution Discussion', 'title_vi': 'Thảo luận giải pháp (4 phút)',
  'content': """
 <h3>1. Format</h3>
@@ -133,7 +133,7 @@ Well, I definitely prefer eating at home. The main reason is that home-cooked me
 """,
 },
 {
- 'part': 3, 'order': 3,
+ 'part': 3, 'order': 20,
  'title': 'Part 3: Topic Development', 'title_vi': 'Phát triển chủ đề (5 phút)',
  'content': """
 <h3>1. Format</h3>
